@@ -2,6 +2,8 @@ load("@rules_pkg//pkg:deb.bzl", "pkg_deb")
 load("@rules_pkg//pkg:tar.bzl", "pkg_tar")
 load(":my_package_name.bzl", "basic_naming")
 
+# attempt to use rules_pkg, no success, but leave here for future reference
+
 VERSION = "1"
 REVISION = "2"
 
@@ -11,12 +13,6 @@ basic_naming(
     version = VERSION,
     revision = REVISION,
 )
-
-def _names_from_toolchains_impl(ctx):
-    values = {}
-    cc_toolchain = find_cc_toolchain(ctx)
-    values['cc_cpu'] = cc_toolchain.cpu
-    return PackageVariablesInfo(values = values)
 
 names_from_toolchains = rule(
     implementation = _names_from_toolchains_impl,
