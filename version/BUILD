@@ -1,21 +1,19 @@
 load("@rules_cc//cc:defs.bzl", "cc_library")
+load("PATCH_VERSION.bzl", "PATCH_VERSION")
+load(":expand_tpl.bzl", "expand_tpl")     
 
-#$(PROJECT_VERSION_PATCH)
-genrule(
-    name = "generate_version_header",
-    srcs = ["version.h.in"],
-    outs = ["version.h"],
-    cmd = """
-        cat $< | sed 's/@PROJECT_VERSION_PATCH@/1/' > $@
-    """,
-#    tools = ["@bazel_tools//tools/text:cat", "@bazel_tools//tools/defaults:sed"],
-    visibility = ["//visibility:public"],
+expand_tpl(
+    name = "genver",
+    template = "version.h.in",
+    substitutions = {
+        "@PROJECT_VERSION_PATCH@": PATCH_VERSION,
+    },
 )
 
 cc_library(
     name = "helloworld",
     srcs = ["lib.cpp"],
-    hdrs = ["lib.h", ":generate_version_header"],
+    hdrs = ["lib.h", ":genver"],
     copts = ["-I$(GENDIR)/version"],
     visibility = ["//main:__pkg__", "//test:__pkg__"],
 )
