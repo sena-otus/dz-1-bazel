@@ -1,0 +1,9 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+override_dh_auto_build:
+	bazel build //main:helloworld_cli
+override_dh_auto_install:
+	install -d debian/helloworld/usr/bin
+	install bazel-bin/main/helloworld_cli debian/helloworld/usr/bin/helloworld_cli

@@ -1,0 +1,19 @@
+Source: helloworld
+Section: devel
+Priority: optional
+Maintainer: Sergey Spiridonov <sena73@ya.ru>
+Build-Depends: debhelper (>= 12), bazel-bootstrap, bazel-rules-cc
+Standards-Version: 4.5.0
+Homepage: https://github.com/sena-otus/dz-1-bazel
+Description: Hello World C++ Application
+ A simple C++ Hello World application built with Bazel.
+
+
+Package: helloworld
+Architecture: any
+Multi-Arch: foreign
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: ello World C++ Application
+ A simple C++ Hello World application built with Bazel.
+
+
