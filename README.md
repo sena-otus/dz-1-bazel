@@ -1,4 +1,4 @@
-bazel+googletest+debian package
+# helloworld c++, bazel with version.h.in header generation, debian package generation using rules_pkg, googletest, github actions==
 
 * On first checkout run "./update-patch-version.sh 1" to generate patch-version file (version/PATCH_VERSION.bzl).
 * You will need fresh bazel binary to build that. The version which comes with Debian 12 or Ubuntu 22 is outdated and will not work.
