@@ -21,7 +21,7 @@ pkg_deb(
     ],
     description = "that is a helloworld app build with bazel",
     homepage = "https://github.com/sena-otus/dz-1-bazel",
-    maintainer = "sena73@ya.ru",
+    maintainer = "example@example.com",
     package = "helloworld",
     version = "0.0."+PATCH_VERSION,
 )
