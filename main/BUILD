@@ -6,4 +6,5 @@ cc_binary(
     deps = [
         "//version:helloworld",
     ],
+    visibility = ["//pkg:__pkg__"],
 )
