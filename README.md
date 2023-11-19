@@ -4,8 +4,8 @@
 Project example with classic helloworld c++ application using bazel build system and github actions
 
 * generate version.h from version.h.in using bazel
-* debian package generation using bazel rules_pkg
-* googletest example
+* debian package generation using bazel [rules_pkg](https://github.com/bazelbuild/rules_pkg)
+* [googletest](https://github.com/google/googletest) example
 * use github actions to build and release debian package on each push
 
 ## Build instruction
