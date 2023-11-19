@@ -1,7 +1,7 @@
-# helloworld c++, bazel, debian package, googletest, github actions==
+# helloworld c++, bazel, debian packaging, googletest, github actions
 
 ## Description
-Project example with classic helloworld c++ application with bazel
+Project example with classic helloworld c++ application using bazel build system and github actions
 
 * generate version.h from version.h.in using bazel
 * debian package generation using bazel rules_pkg
